@@ -5,57 +5,22 @@ import { Link } from "react-router-dom";
 import { siteConfig, styleConfig } from "@/config/content";
 
 const Index = () => {
-  // Datos de ejemplo para el dashboard
-  const physiologicalData = [
-    {
-      label: "Heart Rate",
-      value: "72",
-      unit: "bpm",
-      status: "normal",
-      icon: Heart,
-      color: "text-accent",
-    },
-    {
-      label: "HRV",
-      value: "58",
-      unit: "ms",
-      status: "good",
-      icon: Activity,
-      color: "text-primary",
-    },
-    {
-      label: "Stress Level",
-      value: "35",
-      unit: "/100",
-      status: "low",
-      icon: Brain,
-      color: "text-primary",
-    },
-    {
-      label: "Body Battery",
-      value: "82",
-      unit: "%",
-      status: "high",
-      icon: Battery,
-      color: "text-primary",
-    },
-    {
-      label: "VO2 Max",
-      value: "48",
-      unit: "ml/kg/min",
-      status: "excellent",
-      icon: TrendingUp,
-      color: "text-primary",
-    },
-    {
-      label: "Fatiga Risk",
-      value: "Low",
-      unit: "",
-      status: "safe",
-      icon: AlertTriangle,
-      color: "text-primary",
-    },
-  ];
+  // Mapeo de iconos desde la configuración
+  const iconMap = {
+    Heart,
+    Activity,
+    Brain,
+    Battery,
+    TrendingUp,
+    AlertTriangle,
+  };
+
+  // Convertir datos de configuración a formato con iconos y colores
+  const physiologicalData = siteConfig.dashboardData.map((item) => ({
+    ...item,
+    icon: iconMap[item.icon as keyof typeof iconMap],
+    color: "text-primary",
+  }));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary">

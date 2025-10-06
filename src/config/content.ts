@@ -8,14 +8,14 @@ export const siteConfig = {
   hero: {
     title: "Prevención de Fatiga Inteligente",
     subtitle: "Monitoreo de datos fisiológicos en tiempo real para operadores industriales",
-    description: "Transformamos datos de dispositivos Garmin en insights accionables para prevenir fatiga y proteger la salud de tus equipos.",
+    description: "Transformamos datos de dispositivos wearables en insights accionables para prevenir fatiga y proteger la salud de tus equipos.",
     ctaText: "Solicitar Demo",
   },
   
   // Solución
   solution: {
     title: "Nuestra Solución",
-    description: "Integramos tecnología wearable Garmin con análisis avanzado para monitorear el estado de salud de operadores de maquinaria y transporte industrial en tiempo real.",
+    description: "Integramos tecnología wearable con análisis avanzado para monitorear el estado de salud de operadores de maquinaria y transporte industrial en tiempo real.",
     features: [
       {
         title: "Monitoreo Continuo",
@@ -34,6 +34,52 @@ export const siteConfig = {
       },
     ],
   },
+  
+  // Dashboard de Ejemplo - Datos fisiológicos de muestra
+  dashboardData: [
+    {
+      label: "Heart Rate",
+      value: "72",
+      unit: "bpm",
+      status: "normal",
+      icon: "Heart",
+    },
+    {
+      label: "HRV",
+      value: "58",
+      unit: "ms",
+      status: "good",
+      icon: "Activity",
+    },
+    {
+      label: "Stress Level",
+      value: "35",
+      unit: "/100",
+      status: "low",
+      icon: "Brain",
+    },
+    {
+      label: "Body Battery",
+      value: "82",
+      unit: "%",
+      status: "high",
+      icon: "Battery",
+    },
+    {
+      label: "VO2 Max",
+      value: "48",
+      unit: "ml/kg/min",
+      status: "excellent",
+      icon: "TrendingUp",
+    },
+    {
+      label: "Fatiga Risk",
+      value: "Low",
+      unit: "",
+      status: "safe",
+      icon: "AlertTriangle",
+    },
+  ],
   
   // Métricas del Dashboard
   metrics: {
