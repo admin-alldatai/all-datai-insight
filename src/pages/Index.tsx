@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity, Heart, Brain, Battery, TrendingUp, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { siteConfig, styleConfig } from "@/config/content";
+import AlldataiLogo from "@/components/AlldataiLogo";
 
 const Index = () => {
   // Mapeo de iconos desde la configuración
@@ -23,13 +24,15 @@ const Index = () => {
   }));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid-1))] via-[hsl(var(--gradient-mid-2))] to-[hsl(var(--gradient-end))]">
+    <div className="min-h-screen relative">
+      {/* Background gradient with opacity overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid-1))] via-[hsl(var(--gradient-mid-2))] to-[hsl(var(--gradient-end))] opacity-90 -z-10"></div>
+      <div className="fixed inset-0 bg-black/20 -z-10"></div>
       {/* Header */}
       <header className="border-b border-white/10 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Activity className="h-8 w-8 text-white" />
-            <span className="text-2xl font-bold text-white">{siteConfig.companyName}</span>
+          <div className="flex items-center gap-3">
+            <AlldataiLogo className="h-10" />
           </div>
           <p className="hidden md:block text-sm text-white/80">{siteConfig.tagline}</p>
         </div>

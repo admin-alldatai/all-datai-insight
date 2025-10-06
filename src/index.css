@@ -8,11 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Gradient colors inspired by AllDataI branding */
-    --gradient-start: 240 85% 25%; /* Deep blue */
-    --gradient-mid-1: 260 70% 45%; /* Purple */
-    --gradient-mid-2: 320 75% 55%; /* Pink-magenta */
-    --gradient-end: 0 85% 60%; /* Coral red */
+    /* Gradient colors inspired by AllDataI branding - More blue, less pink */
+    --gradient-start: 235 80% 30%; /* Darker blue */
+    --gradient-mid-1: 250 65% 45%; /* Blue-purple */
+    --gradient-mid-2: 270 60% 50%; /* Purple (less pink) */
+    --gradient-end: 285 55% 50%; /* Purple-magenta (less coral)
     
     --background: 0 0% 100%;
     --foreground: 240 85% 10%;
