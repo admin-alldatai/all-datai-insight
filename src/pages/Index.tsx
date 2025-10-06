@@ -23,31 +23,31 @@ const Index = () => {
   }));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary">
+    <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid-1))] via-[hsl(var(--gradient-mid-2))] to-[hsl(var(--gradient-end))]">
       {/* Header */}
-      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-white/10 bg-black/20 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Activity className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">{siteConfig.companyName}</span>
+            <Activity className="h-8 w-8 text-white" />
+            <span className="text-2xl font-bold text-white">{siteConfig.companyName}</span>
           </div>
-          <p className="hidden md:block text-sm text-muted-foreground">{siteConfig.tagline}</p>
+          <p className="hidden md:block text-sm text-white/80">{siteConfig.tagline}</p>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h1 className={`${styleConfig.sizes.heroTitle} ${styleConfig.fonts.heading} text-foreground leading-tight`}>
+          <h1 className={`${styleConfig.sizes.heroTitle} ${styleConfig.fonts.heading} text-white leading-tight drop-shadow-lg`}>
             {siteConfig.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+          <p className="text-xl md:text-2xl text-white/90 font-medium">
             {siteConfig.hero.subtitle}
           </p>
-          <p className={`${styleConfig.sizes.body} text-muted-foreground max-w-2xl mx-auto`}>
+          <p className={`${styleConfig.sizes.body} text-white/80 max-w-2xl mx-auto`}>
             {siteConfig.hero.description}
           </p>
-          <Button size="lg" className="mt-8">
+          <Button size="lg" className="mt-8 bg-white text-primary hover:bg-white/90 font-semibold">
             {siteConfig.hero.ctaText}
           </Button>
         </div>
@@ -57,10 +57,10 @@ const Index = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className={`${styleConfig.sizes.sectionTitle} ${styleConfig.fonts.heading} text-foreground mb-4`}>
+            <h2 className={`${styleConfig.sizes.sectionTitle} ${styleConfig.fonts.heading} text-white mb-4`}>
               {siteConfig.solution.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
               {siteConfig.solution.description}
             </p>
           </div>
@@ -70,13 +70,13 @@ const Index = () => {
               const IconComponent = feature.icon === "Activity" ? Activity : 
                                    feature.icon === "AlertTriangle" ? AlertTriangle : Brain;
               return (
-                <Card key={index} className="border-border hover:shadow-lg transition-shadow">
+                <Card key={index} className="bg-white/10 border-white/20 backdrop-blur-md hover:bg-white/15 hover:border-white/30 transition-all">
                   <CardHeader>
-                    <IconComponent className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle className={styleConfig.sizes.cardTitle}>{feature.title}</CardTitle>
+                    <IconComponent className="h-12 w-12 text-white mb-4" />
+                    <CardTitle className={`${styleConfig.sizes.cardTitle} text-white`}>{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <p className="text-white/70">{feature.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -86,13 +86,13 @@ const Index = () => {
       </section>
 
       {/* Dashboard Section */}
-      <section className="container mx-auto px-4 py-16 bg-card/30 rounded-lg my-8">
+      <section className="container mx-auto px-4 py-16 bg-white/5 backdrop-blur-sm rounded-2xl my-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className={`${styleConfig.sizes.sectionTitle} ${styleConfig.fonts.heading} text-foreground mb-4`}>
+            <h2 className={`${styleConfig.sizes.sectionTitle} ${styleConfig.fonts.heading} text-white mb-4`}>
               {siteConfig.metrics.title}
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/80">
               {siteConfig.metrics.description}
             </p>
           </div>
@@ -101,21 +101,21 @@ const Index = () => {
             {physiologicalData.map((metric, index) => {
               const Icon = metric.icon;
               return (
-                <Card key={index} className="border-border hover:border-primary/50 transition-colors">
+                <Card key={index} className="bg-white/10 border-white/20 backdrop-blur-md hover:bg-white/15 hover:border-white/30 transition-all">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">
+                    <CardTitle className="text-sm font-medium text-white/70">
                       {metric.label}
                     </CardTitle>
-                    <Icon className={`h-5 w-5 ${metric.color}`} />
+                    <Icon className="h-5 w-5 text-white" />
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-bold text-foreground">{metric.value}</span>
+                      <span className="text-3xl font-bold text-white">{metric.value}</span>
                       {metric.unit && (
-                        <span className="text-sm text-muted-foreground">{metric.unit}</span>
+                        <span className="text-sm text-white/60">{metric.unit}</span>
                       )}
                     </div>
-                    <p className="text-xs text-muted-foreground mt-2 capitalize">
+                    <p className="text-xs text-white/50 mt-2 capitalize">
                       Estado: {metric.status}
                     </p>
                   </CardContent>
@@ -127,11 +127,11 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-card/50 mt-16">
+      <footer className="border-t border-white/10 bg-black/20 backdrop-blur-md mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">{siteConfig.footer.copyright}</p>
-            <Link to="/privacy" className="text-sm text-primary hover:underline">
+            <p className="text-sm text-white/60">{siteConfig.footer.copyright}</p>
+            <Link to="/privacy" className="text-sm text-white hover:text-white/80 transition-colors">
               {siteConfig.footer.privacyLink}
             </Link>
           </div>
